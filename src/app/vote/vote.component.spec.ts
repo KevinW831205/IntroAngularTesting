@@ -3,9 +3,30 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { VoteComponent } from './vote.component';
 
 describe('VoteComponent', () => {
+  let component: VoteComponent;
+
+  // setup
+  beforeEach(() => {
+    //before each test
+    component = new VoteComponent();
+  })
+
+  beforeAll(() => {
+
+  })
+
+  //teardown
+  afterEach(() => {
+    //after each clean up
+  })
+
+
+  afterAll(() => {
+
+  })
+
   it('should increment the total votes, when upvoted', () => {
     //given
-    let component = new VoteComponent();
     const expected = 1;
 
     // when
@@ -18,7 +39,6 @@ describe('VoteComponent', () => {
 
   it('should decrement the total votes, when downvoted', () => {
     //given
-    let component = new VoteComponent();
     const expected = -1;
 
     // when
