@@ -1,24 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoserviceService {
 
-  constructor(private http: HttpClientModule) {
+  constructor(private http: HttpClient) {
   }
 
   // add(todo) {
   //   return this.http.add('...', todo).map(r => r.json());
   // }
 
-  getTodos() {
-    return this.http.
-    public get value() : string {
-      return 
-    }
-    
+  getTodos(): Observable<any[]> {
+    return this.http.get<any[]>("g")
   }
 
   // delete(id) {
