@@ -17,12 +17,9 @@ describe('TodosComponent', () => {
     const arr = ['todo1', 'todo2'];
 
     spyOn(service, 'getTodos').and.callFake(() => {
-      return new Observable(
-        (obs) => {
-          setTimeout(() => {
-            obs.next(arr);
-          }, 500);
-        })
+      return Observable.create((obs) => {
+        obs.next(arr);
+      })
     })
 
     component.ngOnInit();
