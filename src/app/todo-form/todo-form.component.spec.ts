@@ -22,8 +22,6 @@ describe('TodoFormComponent', () => {
 
     control.setValue('enteredsomething');
     expect(control.valid).toBeTruthy();
-
-    
   })
 
 
