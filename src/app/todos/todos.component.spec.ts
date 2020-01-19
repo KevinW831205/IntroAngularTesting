@@ -14,13 +14,20 @@ describe('TodosComponent', () => {
   })
 
   it('should set todos property with the items returned', () => {
-    spyOn(service, 'getTodos').and.callFake(() => {
-      const array = ['todo1', 'todo2'];
+    const arr = ['todo1', 'todo2'];
 
-      return new Observable((obs) => {
-        obs.next(array);
-      })
+    spyOn(service, 'getTodos').and.callFake(() => {
+      return new Observable(
+        (obs) => {
+          setTimeout(() => {
+            obs.next(arr);
+          }, 500);
+        })
     })
+
+    component.ngOnInit();
+    expect(component.todos.length).toBe(arr.length);
+
   })
 
 
