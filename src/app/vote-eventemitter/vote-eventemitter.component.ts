@@ -11,12 +11,12 @@ export class VoteEventemitterComponent {
 
   upVote() {
     this.totalVotes++;
-    this.voteChanged.emit(this.totalVotes.toString());
+    this.voteChanged.emit(this.totalVotes);
   }
 
   downVote() {
     this.totalVotes--;
-    this.voteChanged.emit(this.totalVotes.toString());
+    this.voteChanged.emit(this.totalVotes);
   }
 
 }

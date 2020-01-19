@@ -19,7 +19,10 @@ describe('VoteEventemitterComponent', () => {
     component.upVote();
 
     expect(totalVotes).not.toBeNull();
-    expect(totalVotes).toEqual()
+    expect(totalVotes).toEqual(expected);
+
+    component.downVote();
+    expect(totalVotes).toEqual(0);
 
   })
 
