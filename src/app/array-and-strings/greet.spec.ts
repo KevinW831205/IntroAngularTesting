@@ -18,5 +18,4 @@ describe('greet', () => {
     it('should contain the input', ()=>{
         testGreetContain("abcdefg")
     });
-
 })
