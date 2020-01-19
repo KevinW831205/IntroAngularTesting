@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { EventEmitter } from 'protractor';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-vote-eventemitter',
