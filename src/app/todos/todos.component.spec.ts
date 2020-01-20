@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TodosComponent } from './todos.component';
 import { TodoserviceService } from '../todoservice.service';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 describe('TodosComponent', () => {
   let component: TodosComponent;
@@ -54,6 +54,25 @@ describe('TodosComponent', () => {
     let indexOfAddedTodo = component.todos.indexOf(todo1);
     expect(indexOfAddedTodo).toBeGreaterThanOrEqual(0);
   })
+
+  it('should set message if returned error', () => {
+    //given
+    let errorMessage = 'error message'
+
+    let spy = spyOn(service, 'add').and.callFake(todo => {
+
+      // return Observable.throw(errorMessage);
+      return throwError(errorMessage);
+    })
+    //when
+    component.add();
+
+    //then
+    let actual = component.message;
+    expect(actual).toBe(errorMessage);
+  })
+
+
 
 
 
