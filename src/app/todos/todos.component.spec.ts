@@ -72,8 +72,25 @@ describe('TodosComponent', () => {
     expect(actual).toBe(errorMessage);
   })
 
+  it('should call the server to delete a todo item if confirmed', () => {
+    spyOn(window, 'confirm').and.returnValue(true);
+    let serviceSpy = spyOn(service, 'delete').and.returnValue(Observable.create((obs) => {
+      obs.next();
+    }))
 
+    component.delete(1);
 
+    expect(serviceSpy).toHaveBeenCalledWith(1);
+  })
 
+  it('server should not be callsed todo item if cancleled', () => {
+    spyOn(window, 'confirm').and.returnValue(false);
+    let serviceSpy = spyOn(service, 'delete').and.returnValue(Observable.create((obs) => {
+      obs.next();
+    }))
 
+    component.delete(1);
+
+    expect(serviceSpy).not.toHaveBeenCalled();
+  })
 });

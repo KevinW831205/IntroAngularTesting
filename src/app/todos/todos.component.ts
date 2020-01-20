@@ -29,7 +29,9 @@ export class TodosComponent implements OnInit {
   }
 
   delete(id) {
-    this.service.delete(id)
+    if (confirm('Are you sure?')) {
+      this.service.delete(id).subscribe();
+    }
   }
 
 }

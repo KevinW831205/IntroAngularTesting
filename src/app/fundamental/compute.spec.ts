@@ -24,7 +24,7 @@ describe('compute', () => { // suite definition
 
     it('return the number plus 1 if input is greater than or equal to 0', () => {
         testCompute(1,0);
-        testCompute(2,1)
+        testCompute(2,1);
         
         // // given
         // const expected1 = 1;
