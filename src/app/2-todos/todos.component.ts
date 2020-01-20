@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from './todo.service'
+import { TodoserviceService } from './todo.service'
 
 @Component({
   selector: 'app-todos',
@@ -10,7 +10,7 @@ export class TodosComponent implements OnInit {
   todos: any[] = [];
   message; 
 
-  constructor(private service: TodoService) {}
+  constructor(private service: TodoserviceService) {}
 
   ngOnInit() { 
     this.service.getTodos().subscribe(t => this.todos = t);
