@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TodosComponent } from './todos.component';
+import { TodoserviceService } from './todo.service';
+import { HttpClient } from '@angular/common/http';
 
 //NOTE: I've deliberately excluded this suite from running
 // because the test will fail. This is because we have not 
@@ -18,9 +20,11 @@ xdescribe('TodosComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodosComponent ]
+      imports: [HttpClient],
+      declarations: [TodosComponent],
+      providers: [TodoserviceService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
