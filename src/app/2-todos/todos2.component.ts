@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TodoserviceService } from './todo2.service'
 
 @Component({
-  providers: [TodoserviceService],
   selector: 'app-todos',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css']
