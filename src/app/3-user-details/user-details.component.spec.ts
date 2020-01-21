@@ -18,7 +18,7 @@ class ActivatedRouteStub {
   private subject = new Subject();
 
   get params(){
-    return this.subject.asObservable
+    return this.subject.asObservable();
   }
   // params: Observable<any> = Observable.create();
 
