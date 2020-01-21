@@ -7,6 +7,7 @@ import { VoteComponent } from './vote/vote.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { VoteEventemitterComponent } from './vote-eventemitter/vote-eventemitter.component';
 import { TodosComponent } from './todos/todos.component';
+import { TodoserviceService } from './2-todos/todo.service';
 
 @NgModule({
   declarations: [

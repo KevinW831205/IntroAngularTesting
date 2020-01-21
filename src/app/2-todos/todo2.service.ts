@@ -15,6 +15,7 @@ export class TodoserviceService {
   }
 
   getTodos(): Observable<any[]> {
+    console.log("called get method in service")
     return this.http.get<any[]>("g")
   }
 
